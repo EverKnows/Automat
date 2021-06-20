@@ -17,4 +17,5 @@ public class DeviceStatusQueryRequest implements Serializable {
     @NotNull(message = "机器在线状态不能为空")
     private Integer enable;
 
+
 }
