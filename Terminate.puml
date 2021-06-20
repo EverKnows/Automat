@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+user -> terminal: 选择商品
+terminal --> terminal: 生成订单
+
+terminal -> server: 请求服务端发起支付
+server --> wechat: 发起支付
+wechat --> server: 二维码及相关支付字段
+server --> terminal: 二维码连接及相关字段
+
+terminal --> terminal: 二维码连接转化
+terminal --> user: 二维码
+
+==  ==
+wechat --> server: 异步通知支付结果
+server --> terminal: 支付成功
+terminal --> terminal: 执行出货
+terminal --> server: 出货成功
+server --> server: 货量变更，订单完成
+server --> terminal: 交易完成
+
+
+
+
+@enduml
