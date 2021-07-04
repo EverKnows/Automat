@@ -10,11 +10,15 @@ import java.util.List;
 @Getter
 public class DeviceVO implements Serializable {
 
+    private static final long serialVersionUID = 8439988597342457305L;
     // 设备Id
     private Long deviceId;
 
     // 设备IP
     private String deviceIp;
+
+    // sim卡ID
+    private String simCardId;
 
     // 设备名称
     private String deviceName;
@@ -24,9 +28,6 @@ public class DeviceVO implements Serializable {
 
     // 状态描述
     private String statusDesc;
-
-    // 机器状态 0 离线 1在线
-    private Integer status;
 
     // 安装位置
     private String location;

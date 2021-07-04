@@ -13,6 +13,7 @@ import java.io.Serializable;
 @Getter
 public class DeviceStatusQueryRequest implements Serializable {
 
+    private static final long serialVersionUID = -979041609779918914L;
     // 设备状态查询 0 离线 1 在线 2 全部
     @NotNull(message = "机器在线状态不能为空")
     private Integer enable;

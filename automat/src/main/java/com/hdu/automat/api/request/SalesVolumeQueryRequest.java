@@ -12,6 +12,7 @@ import java.util.Date;
 @Getter
 public class SalesVolumeQueryRequest implements Serializable {
 
+    private static final long serialVersionUID = 1187802118659359757L;
     // 开始日期  格式 yyyy-MM-dd 00:00:00
     @NotNull(message = "开始日期不能为空")
     private Date startDate;

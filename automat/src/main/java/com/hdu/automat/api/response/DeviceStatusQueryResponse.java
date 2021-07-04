@@ -9,5 +9,6 @@ import java.io.Serializable;
 @Getter
 public class DeviceStatusQueryResponse implements Serializable {
 
+    private static final long serialVersionUID = -5427367202360716060L;
     private Long sum;
 }

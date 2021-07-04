@@ -9,6 +9,7 @@ import java.io.Serializable;
 @Getter
 public class DeviceChannelVo implements Serializable {
 
+    private static final long serialVersionUID = -1569445232906205191L;
     // 设备Id
     private Long deviceId;
 

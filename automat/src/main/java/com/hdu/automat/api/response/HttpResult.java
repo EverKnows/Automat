@@ -2,16 +2,22 @@ package com.hdu.automat.api.response;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.context.annotation.DependsOn;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 
 @Setter
 @Getter
+@Component
 public class HttpResult<T> implements Serializable {
 
     private static final Integer SUCCESS = 200;
 
     private static final Integer FAIL = 500;
+    private static final long serialVersionUID = -5323271072384263570L;
 
     private Integer code;
 

@@ -1,5 +1,6 @@
 package com.hdu.automat.api.request;
 
+import com.hdu.automat.api.response.HttpResult;
 import com.hdu.automat.biz.exception.ParamException;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import java.io.Serializable;
 @Getter
 public class LoginRequest implements Serializable {
 
+    private static final long serialVersionUID = -1531737861477432550L;
     // 名称
     @NotBlank(message = "用户名称不能为空")
     private String name;
