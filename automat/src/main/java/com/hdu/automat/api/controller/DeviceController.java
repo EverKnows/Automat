@@ -32,7 +32,7 @@ public class DeviceController {
         return JSON.toJSONString(new HttpResult<List<String>>().success(Arrays.stream(ItemInfo.values()).map(ItemInfo::getName).collect(Collectors.toList())));
     }
 
-
+    
 
 
 }
