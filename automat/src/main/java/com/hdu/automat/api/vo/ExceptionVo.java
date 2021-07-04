@@ -1,4 +1,4 @@
-package com.hdu.automat.api.response;
+package com.hdu.automat.api.vo;
 
 import lombok.Getter;
 import lombok.Setter;

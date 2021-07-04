@@ -1,4 +1,4 @@
-package com.hdu.automat.api.response;
+package com.hdu.automat.api.vo;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +15,12 @@ public class OrderVo implements Serializable {
 
     // 消费地点
     private String location;
+
+    // 设备ID
+    private String deviceId;
+
+    // 设备名称
+    private String deviceName;
 
     // 消费日期
     private String date;

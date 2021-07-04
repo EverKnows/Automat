@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Setter
 @Getter
@@ -17,6 +18,9 @@ public class DeviceVO implements Serializable {
 
     // 设备名称
     private String deviceName;
+
+    // 设备通道列表
+    private List<DeviceChannelVo> channelVoList;
 
     // 状态描述
     private String statusDesc;
