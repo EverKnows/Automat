@@ -1,8 +1,6 @@
 package com.hdu.automat.biz.entity;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
-import com.hdu.automat.api.vo.DeviceChannelVo;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -10,6 +10,7 @@ import java.io.Serializable;
 @Getter
 public class OrderRefundRequest implements Serializable {
 
+    private static final long serialVersionUID = 5935259256841610457L;
     @NotBlank(message = "订单编号不能为空")
     private String orderNo;
 

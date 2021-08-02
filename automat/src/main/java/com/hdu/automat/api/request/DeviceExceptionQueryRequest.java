@@ -11,6 +11,7 @@ import java.util.Date;
 @Getter
 public class DeviceExceptionQueryRequest implements Serializable {
 
+    private static final long serialVersionUID = -8102913508990506572L;
     @NotNull(message = "开始日期不能为空")
     private Date startDate;
 

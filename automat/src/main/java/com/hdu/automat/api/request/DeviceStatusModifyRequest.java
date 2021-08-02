@@ -10,6 +10,7 @@ import java.io.Serializable;
 @Getter
 public class DeviceStatusModifyRequest implements Serializable {
 
+    private static final long serialVersionUID = -1017229813225591033L;
     @NotNull(message = "状态不能为空")
     private Integer enable;
 

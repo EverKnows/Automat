@@ -11,6 +11,7 @@ import java.util.Date;
 @Getter
 public class ItemSalesVolumeQueryRequest implements Serializable {
 
+    private static final long serialVersionUID = -1903308463568864793L;
     // yyyy-MM
     @NotNull(message = "月份不能为空")
     private Date month;

@@ -9,5 +9,6 @@ import java.io.Serializable;
 @Getter
 public class DeviceExceptionHandleRequest implements Serializable {
 
+    private static final long serialVersionUID = -1668813726175837531L;
     private Long id;
 }

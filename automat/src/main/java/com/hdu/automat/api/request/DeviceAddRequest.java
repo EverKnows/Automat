@@ -10,6 +10,7 @@ import java.io.Serializable;
 @Getter
 public class DeviceAddRequest implements Serializable {
 
+    private static final long serialVersionUID = 2058166566473534592L;
     // 设备名称
     @NotBlank(message = "设备名称不能为空")
     private String deviceName;

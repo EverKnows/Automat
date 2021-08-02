@@ -11,6 +11,7 @@ import java.util.Date;
 @Getter
 public class OrderQueryRequest implements Serializable {
 
+    private static final long serialVersionUID = 6132552793172184473L;
     @NotNull(message = "开始日期不能为空")
     private Date startDate;
 

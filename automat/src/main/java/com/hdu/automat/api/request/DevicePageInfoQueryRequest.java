@@ -9,6 +9,7 @@ import java.io.Serializable;
 @Getter
 public class DevicePageInfoQueryRequest implements Serializable {
 
+    private static final long serialVersionUID = 2818019780735263756L;
     private Long pageNum = 1L;
 
     private Long pageSize = 10L;

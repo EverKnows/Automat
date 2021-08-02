@@ -10,6 +10,8 @@ import java.util.Map;
 @Setter
 @Getter
 public class SalesVolumeQueryResponse implements Serializable {
+
+    private static final long serialVersionUID = -1462153535555040275L;
     // 每日销售额列表
     private List<String> salesVolumeList;
 

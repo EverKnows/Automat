@@ -11,9 +11,10 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ItemInfo {
 
-    TEA1("茶1"),
-    TEA2("茶2"),
-    TEA3("茶3"),;
+    //TEA1("茶1"),
+    //TEA2("茶2"),
+    //TEA3("茶3"),;
+    //
+    //private String name;
 
-    private final String name;
 }

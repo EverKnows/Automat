@@ -1,6 +1,5 @@
 package com.hdu.automat.biz.entity;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
