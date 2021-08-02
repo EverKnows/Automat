@@ -1,6 +1,7 @@
 package com.hdu.automat.api.controller;
 
 import com.hdu.automat.api.request.LoginRequest;
+import com.hdu.automat.api.response.HttpResult;
 import com.hdu.automat.biz.entity.UserEntity;
 import com.hdu.automat.biz.repository.UserRepository;
 import org.springframework.stereotype.Controller;
@@ -19,9 +20,9 @@ public class LoginController {
     @Resource
     private UserRepository userRepository;
 
-    @RequestMapping(value = "/login")
+    @RequestMapping(value = "/userLogin")
     @ResponseBody
-    public UserEntity login(LoginRequest loginRequest) {
-        return userRepository.loadByUserId(1L);
+    public HttpResult<UserEntity> login(LoginRequest loginRequest) {
+        return new HttpResult<UserEntity>().success(userRepository.loadByUserId(1L));
     }
 }
