@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Setter
 @Getter
-public class ExceptionVo implements Serializable {
+public class ExceptionVO implements Serializable {
 
     private static final long serialVersionUID = 6039094346546143107L;
     // 设备Id

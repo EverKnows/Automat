@@ -15,7 +15,7 @@
         id ,
         user_name ,
         password ,
-        create_time ,
+        create_time
     </sql>
     
     <sql id="TABLE_NAME">
@@ -28,7 +28,7 @@
           <include refid="Base_Column_List"/>
 
         from <include refid="TABLE_NAME"/>
-        where id = #{id} and is_deleted = 0
+        where id = #{id}
     </select>
 
     <!--新增所有列-->

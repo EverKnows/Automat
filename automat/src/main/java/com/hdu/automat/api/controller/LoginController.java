@@ -3,10 +3,9 @@ package com.hdu.automat.api.controller;
 import com.hdu.automat.api.request.LoginRequest;
 import com.hdu.automat.api.response.HttpResult;
 import com.hdu.automat.biz.entity.UserEntity;
-import com.hdu.automat.biz.repository.UserRepository;
-import org.springframework.stereotype.Controller;
+import com.hdu.automat.biz.repository.UserService;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
@@ -14,15 +13,14 @@ import javax.annotation.Resource;
  * @author jianmiao.xu
  * @date 2021/7/30
  */
-@Controller
+@RestController
 public class LoginController {
 
     @Resource
-    private UserRepository userRepository;
+    private UserService userService;
 
     @RequestMapping(value = "/userLogin")
-    @ResponseBody
     public HttpResult<UserEntity> login(LoginRequest loginRequest) {
-        return new HttpResult<UserEntity>().success(userRepository.loadByUserId(1L));
+        return new HttpResult<UserEntity>().success(userService.loadByUserId(1L));
     }
 }

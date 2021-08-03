@@ -24,7 +24,7 @@ public class DeviceVO implements Serializable {
     private String deviceName;
 
     // 设备通道列表
-    private List<DeviceChannelVo> channelVoList;
+    private List<DeviceChannelVO> channelVoList;
 
     // 状态描述
     private String statusDesc;

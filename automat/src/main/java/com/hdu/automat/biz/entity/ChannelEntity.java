@@ -13,13 +13,15 @@ public class ChannelEntity {
 
     public String id;
 
-    private String deviceId;
+    private Integer subId;
 
-    private String deviceName;
+    private String deviceId;
 
     private String itemName;
 
     private String price;
 
-    private Integer num;
+    private Long size;
+
+    private Long stock;
 }

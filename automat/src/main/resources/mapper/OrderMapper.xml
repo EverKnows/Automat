@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdu.automat.dal.mapper.OrderMapper">
+
+    <resultMap id="BaseResultMap" type="com.hdu.automat.dal.entity.OrderDTO">
+        <!--@Table t_order-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="location" column="location" jdbcType="VARCHAR"/>
+        <result property="payTime" column="pay_time" jdbcType="TIMESTAMP"/>
+        <result property="itemName" column="item_name" jdbcType="VARCHAR"/>
+        <result property="payAmount" column="pay_amount" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="orderNo" column="order_no" jdbcType="VARCHAR"/>
+        <result property="deviceId" column="device_id" jdbcType="BIGINT"/>
+    </resultMap>
+    
+    
+    <sql id="Base_Column_List">
+        id ,
+        location ,
+        pay_time ,
+        item_name ,
+        pay_amount ,
+        create_time ,
+        status ,
+        order_no ,
+        device_id
+    </sql>
+    
+    <sql id="TABLE_NAME">
+        t_order
+    </sql>
+
+    <!--查询单个-->
+    <select id="loadById" resultMap="BaseResultMap">
+        select
+          <include refid="Base_Column_List"/>
+
+        from <include refid="TABLE_NAME"/>
+        where id = #{id} and is_deleted = 0
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into <include refid="TABLE_NAME"/> (location, pay_time, item_name, pay_amount, create_time, status, order_no, device_id)
+        values (#{location}, #{payTime}, #{itemName}, #{payAmount}, #{createTime}, #{status}, #{orderNo}, #{deviceId})
+    </insert>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from <include refid="TABLE_NAME"/> where id = #{id}
+    </delete>
+
+</mapper>

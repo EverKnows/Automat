@@ -14,7 +14,7 @@ import javax.annotation.Resource;
  * @date 2021/7/30
  */
 @Component
-public class UserRepository {
+public class UserService {
 
     @Resource
     private UserMapper userMapper;

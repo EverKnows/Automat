@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 @Setter
 @Getter
-public class DeviceAddRequest implements Serializable {
+public class DeviceRegistryRequest implements Serializable {
 
     private static final long serialVersionUID = 2058166566473534592L;
     // 设备名称

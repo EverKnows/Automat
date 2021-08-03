@@ -1,6 +1,7 @@
 package com.hdu.automat.biz.entity;
 
 import com.alibaba.fastjson.JSONArray;
+import com.hdu.automat.biz.enums.DeviceStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +15,7 @@ import java.util.List;
 @Getter
 public class DeviceEntity {
     // 设备Id
-    private Long deviceId;
+    private Long id;
 
     // 设备IP
     private String deviceIp;
@@ -29,14 +30,9 @@ public class DeviceEntity {
     private List<ChannelEntity> channelVoList;
 
     // 状态描述
-    private String statusDesc;
-
-    private String channelVoJson;
+    private DeviceStatus status;
 
     // 安装位置
     private String location;
 
-    public void convert2List() {
-        this.channelVoList = JSONArray.parseArray(this.channelVoJson, ChannelEntity.class);
-    }
 }

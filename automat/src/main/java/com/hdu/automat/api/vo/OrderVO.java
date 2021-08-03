@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 @Setter
 @Getter
-public class OrderVo implements Serializable {
+public class OrderVO implements Serializable {
 
     private static final long serialVersionUID = -2168644102201311847L;
     // 订单号
