@@ -1,8 +1,13 @@
 package com.hdu.automat.biz.convert;
 
+import com.google.common.collect.Lists;
 import com.hdu.automat.biz.entity.OrderEntity;
 import com.hdu.automat.biz.enums.OrderStatus;
 import com.hdu.automat.dal.entity.OrderDTO;
+import org.springframework.util.CollectionUtils;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author jianmiao.xu
@@ -25,6 +30,14 @@ public class OrderConvert {
         orderEntity.setOrderNo(orderDTO.getOrderNo());
 
         return orderEntity;
+    }
+
+    public static List<OrderEntity> convert2EntityList(List<OrderDTO> orderDTOList) {
+        if (CollectionUtils.isEmpty(orderDTOList)) {
+            return Lists.newArrayList();
+        }
+
+        return orderDTOList.stream().map(OrderConvert::convert2Entity).collect(Collectors.toList());
     }
 
     public static OrderDTO convert2DTO(OrderEntity orderEntity) {

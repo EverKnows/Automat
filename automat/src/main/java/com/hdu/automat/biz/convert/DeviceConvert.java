@@ -3,6 +3,11 @@ package com.hdu.automat.biz.convert;
 import com.hdu.automat.biz.entity.DeviceEntity;
 import com.hdu.automat.biz.enums.DeviceStatus;
 import com.hdu.automat.dal.entity.DeviceDTO;
+import org.apache.commons.compress.utils.Lists;
+import org.springframework.util.CollectionUtils;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author jianmiao.xu
@@ -22,6 +27,14 @@ public class DeviceConvert {
         deviceEntity.setStatus(DeviceStatus.getByCode(deviceDTO.getStatus()));
         deviceEntity.setLocation(deviceDTO.getLocation());
         return deviceEntity;
+    }
+
+    public static List<DeviceEntity> convert2EntityList(List<DeviceDTO> deviceDTOList) {
+        if (CollectionUtils.isEmpty(deviceDTOList)) {
+            return Lists.newArrayList();
+        }
+
+        return deviceDTOList.stream().map(DeviceConvert::convert2Entity).collect(Collectors.toList());
     }
 
     public static DeviceDTO convert2DTO(DeviceEntity deviceEntity) {

@@ -2,6 +2,7 @@ package com.hdu.automat.biz.repository;
 
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
+import com.hdu.automat.api.request.DeviceChannelConfigRequest.DeviceChannel;
 import com.hdu.automat.biz.convert.DeviceConvert;
 import com.hdu.automat.biz.entity.DeviceEntity;
 import com.hdu.automat.biz.enums.DeviceStatus;
@@ -13,6 +14,7 @@ import com.hdu.automat.dal.entity.DeviceDTO;
 import com.hdu.automat.dal.mapper.ChannelMapper;
 import com.hdu.automat.dal.mapper.DeviceMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.compress.utils.Lists;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +22,7 @@ import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author jianmiao.xu
@@ -71,5 +74,33 @@ public class DeviceService {
         }
 
     }
+
+    public void delete(Long deviceId) {
+        AssertUtil.isTrue(deviceId != null, "待删除的设备ID不能为空");
+
+        deviceMapper.deleteById(deviceId);
+    }
+
+    @Transactional(rollbackFor = Throwable.class)
+    public void channelConfig(List<DeviceChannel> deviceChannelList, Long deviceId) {
+        AssertUtil.isTrue(!CollectionUtils.isEmpty(deviceChannelList), "渠道配置为空");
+        AssertUtil.isTrue(deviceId != null, "设备ID不能为空");
+
+        for (DeviceChannel deviceChannel : deviceChannelList) {
+            channelMapper.updateChannel(deviceId, deviceChannel.getSubId(), deviceChannel.getItemName());
+        }
+
+    }
+
+    public List<DeviceEntity> loadByStatus(List<DeviceStatus> statusesList) {
+        if (CollectionUtils.isEmpty(statusesList)) {
+            return Lists.newArrayList();
+        }
+
+        return DeviceConvert.convert2EntityList(deviceMapper.loadByStatus(statusesList.stream()
+                                                                                      .map(DeviceStatus::getCode)
+                                                                                      .distinct().collect(Collectors.toList())));
+    }
+
 
 }

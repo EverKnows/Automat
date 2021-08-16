@@ -14,24 +14,25 @@ import java.io.Serializable;
 @Component
 public class HttpResult<T> implements Serializable {
 
-    private static final Integer SUCCESS = 200;
+    public static final Integer SUCCESS = 200;
 
-    private static final Integer FAIL = 500;
+    public static final Integer FAIL = 500;
+
     private static final long serialVersionUID = -5323271072384263570L;
 
     private Integer code;
 
     private String msg;
 
-    private Long pageSize;
+    private Integer pageSize;
 
-    private Long pageNum;
+    private Integer pageNum;
 
-    private Long pages;
+    private Integer pages;
 
     private Long total;
 
-    private Long curPage;
+    private Integer curPage;
 
     private T data;
 
@@ -41,7 +42,7 @@ public class HttpResult<T> implements Serializable {
         return this;
     }
 
-    public HttpResult<T> pageInfo(Long pageSize, Long pageNum, Long curPage, Long total, Long pages) {
+    public HttpResult<T> pageInfo(Integer pageSize, Integer pageNum, Integer curPage, Long total, Integer pages) {
         this.pageNum = pageNum;
         this.curPage = curPage;
         this.total = total;

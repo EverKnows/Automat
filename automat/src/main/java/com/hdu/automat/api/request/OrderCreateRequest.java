@@ -24,6 +24,8 @@ public class OrderCreateRequest implements Serializable {
     // 设备simCardId
     private String simCardId;
 
+    private Long deviceId;
+
 
     public void check() {
         if (StringUtils.isBlank(location)) {

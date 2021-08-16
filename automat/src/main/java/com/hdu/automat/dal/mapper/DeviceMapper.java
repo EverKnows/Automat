@@ -20,6 +20,20 @@ public interface DeviceMapper {
      */
     DeviceDTO loadById(Long id);
 
+    /**
+     * 根据Id捞取对应的设备信息
+     * @param idList
+     * @return
+     */
+    List<DeviceDTO> batchLoadById(@Param("idList") List<Long> idList);
+
+    /**
+     * 更具机器状态捞取机器
+     * @param statusList
+     * @return
+     */
+    List<DeviceDTO> loadByStatus(@Param("statusList") List<Integer> statusList);
+
 
     /**
      * 新增数据

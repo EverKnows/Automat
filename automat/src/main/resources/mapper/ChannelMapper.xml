@@ -67,4 +67,16 @@
             device_id = #{id}
 
     </update>
+
+
+    <update id="updateChannel">
+        update from
+            <include refid="TABLE_NAME"/>
+        set
+            itemName = #{itemName},
+            stock = 0
+        where
+            device_id = #{deviceId}
+            and sub_id = #{subId}
+    </update>
 </mapper>

@@ -2,6 +2,8 @@ package com.hdu.automat.dal.mapper;
 
 import com.hdu.automat.dal.entity.OrderDTO;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,5 +39,15 @@ public interface OrderMapper {
      * @return 影响行数
      */
     int deleteById(Long id);
+
+    /**
+     * 根据时间捞取订单
+     * @param beginTime
+     * @param endTime
+     * @return
+     */
+    List<OrderDTO> loadByTime(@Param("beginTime") Date beginTime,
+                              @Param("endTime") Date endTime,
+                              @Param("orderStatusList") List<Integer> orderStatusList);
 
 }

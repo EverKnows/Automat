@@ -13,8 +13,15 @@ public class OrderQueryRequest implements Serializable {
 
     private static final long serialVersionUID = 6132552793172184473L;
     @NotNull(message = "开始日期不能为空")
-    private Date startDate;
+    private String startDate;
 
     @NotNull(message = "结束日期不能为空")
-    private Date endDate;
+    private String endDate;
+
+    @NotNull(message = "订单状态不能为空")
+    private Integer orderStatus;
+
+    private Integer pageNum = 1;
+
+    private Integer pageSize = 10;
 }

@@ -9,6 +9,7 @@ import com.hdu.automat.biz.entity.DeviceEntity;
 import com.hdu.automat.biz.enums.DeviceStatus;
 import com.hdu.automat.biz.repository.DeviceService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,7 +23,7 @@ public class DeviceController {
     private DeviceService deviceService;
 
     @RequestMapping(value = "/device/delete")
-    public HttpResult<DeviceStatusQueryResponse> deviceStatusQuery(DeviceStatusQueryRequest request) {
+    public HttpResult<DeviceStatusQueryResponse> deviceStatusQuery(@RequestBody DeviceStatusQueryRequest request) {
         log.info("OrderController::create 创建订单, request:{}", JSON.toJSONString(request));
         System.out.println("start routing");
         DeviceStatusQueryResponse response = new DeviceStatusQueryResponse();
@@ -33,7 +34,7 @@ public class DeviceController {
 
 
     @RequestMapping(value = "/device/registry")
-    public HttpResult<Boolean> registry(DeviceRegistryRequest request) {
+    public HttpResult<Boolean> registry(@RequestBody DeviceRegistryRequest request) {
 
         log.info("DeviceController::registry 开始注册新机器, request:{}", JSON.toJSONString(request));
 

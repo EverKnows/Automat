@@ -52,4 +52,26 @@
         delete from <include refid="TABLE_NAME"/> where id = #{id}
     </delete>
 
+    <select id="loadByTime" resultMap="BaseResultMap">
+        select
+            <include refid="Base_Column_List"/>
+        from
+            <include refid="TABLE_NAME"/>
+        where
+            1 = 1
+            <if test="beginTime != null">
+                and pay_time <![CDATA[>=]]> #{beginTime}
+            </if>
+            <if test="endTime != null">
+                and pay_time <![CDATA[<=]]> #{endTime}
+            </if>
+
+            <if test="orderStatusList != null">
+                and status in
+                <foreach collection="orderStatusList" open="(" separator="," close=")" item="status">
+                    #{status}
+                </foreach>
+            </if>
+    </select>
+
 </mapper>

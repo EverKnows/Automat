@@ -22,11 +22,11 @@ public class DeviceChannelConfigRequest implements Serializable {
 
         private static final long serialVersionUID = 8776811714782213366L;
         // 通道ID
-        private Integer channelId;
+        private Integer subId;
 
         // 商品名称
         private String itemName;
 
-        private Long price = AutoMatConstants.PRICE;
+        //private Long price = AutoMatConstants.PRICE;
     }
 }

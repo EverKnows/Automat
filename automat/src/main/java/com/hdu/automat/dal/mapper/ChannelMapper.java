@@ -53,4 +53,15 @@ public interface ChannelMapper {
      */
     int updateStock(@Param("id") Long id,
                     @Param("newStock") Long newStock);
+
+    /**
+     * 通过设备以及通道子Id更新商品种类，商品的存量直接清空
+     * @param deviceId
+     * @param subId
+     * @param itemName
+     * @return
+     */
+    int updateChannel(@Param("deviceId") Long deviceId,
+                      @Param("subId") Integer subId,
+                      @Param("itemName") String itemName);
 }
